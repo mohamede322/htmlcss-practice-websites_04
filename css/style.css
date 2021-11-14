@@ -450,7 +450,7 @@ letter-spacing: -2px;
     gap: 40px;
 }
 .articles .box{
-    border-radius: 6px;
+    border-radius: 10px;
     transition: 0.3s ;
     line-height: 1.5;
     background-color: white;
@@ -1059,7 +1059,7 @@ padding: 2px 5px;
 }
 .how .steps .box{
     display: flex;
-    background-color: white;
+    background-color: rgb(245, 245, 245);
     border-radius: 6px;
     position: relative;
     overflow: hidden;
@@ -1067,6 +1067,7 @@ padding: 2px 5px;
     z-index: 1;
     padding: 40px 30px;
     gap: 20px;
+
 }
 .how .steps .box .txt{
     z-index: 3;
@@ -1385,7 +1386,6 @@ margin-top: 20px;
 /* Video */
 .videos{
     padding-top: var(--main-padding);
-    padding-bottom: var(--main-padding);
     position: relative;
 }
 .videos .container{
@@ -1397,7 +1397,6 @@ margin-top: 20px;
     display: flex;
     gap: 10px;
     border: 1px solid #DDD;
-    padding: 0;
 }
 @media(max-width:767px){
     .videos .box{
@@ -1450,13 +1449,13 @@ margin-top: 20px;
     justify-content: center;
     align-items: center;
 }
-@media(max-width:767px){
-    .videos .vid{
-        display: none;
-    }
-}
 .videos .vid img{
     width: 90%;
+}
+@media(max-width:767px){
+    .videos .vid img{
+        width: 100%;
+    }
 }
 .videos .vid .txt {
     display: flex;
@@ -1465,14 +1464,34 @@ margin-top: 20px;
     background-color: #666666;
     color: white;
 }
+@media(max-width:767px){
+    .videos .vid .txt{
+        flex-direction: column;
+        width: 100%;
+    }
+}
 .videos .vid .txt p{
     padding: 20px;
     font-weight: bold;
     align-self: center;
 }
+@media(max-width:767px){
+    .videos .vid .txt p{
+        padding: 10px;
+        font-size: 14px;
+    }
+}
 .videos .vid .txt .icons{
     align-self: center;
     padding: 20px;
+}
+@media(max-width:767px){
+    .videos .vid .txt .icons{
+        width: 10px;
+        padding: 10px;
+        display: flex;
+        gap: 20px;
+    }
 }
 .videos .vid .txt .icons i{
     font-size: 30px;
@@ -1480,31 +1499,66 @@ margin-top: 20px;
     cursor: pointer;
     transition: 0.3s;
 }
+@media(max-width:767px){
+    .videos .vid .txt .icons i{
+        font-size: 14px;
+        padding-left: 0;
+    }
+}
 .videos .vid .txt .icons i:hover{
     color: var(--main-color);
     transform: scale(1.1);
 }
+.videos .container .box{
+    margin-bottom: var(--main-padding);
+}
 .videos .stats{
     padding-top: var(--main-padding);
-}
-.videos .stats h2{
     padding-bottom: var(--main-padding);
-    text-align: center;
-    font-size: 40px;
+    position: relative;
+    min-height:300px;
+    background-image: url(../images/stats.jpg);
+    background-size: cover;
+}
+.videos .stats::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255 , 95%);
+    top: 0;
+    left: 0;
 }
 .videos .stats .container{
-    background-color: white;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.videos .stats .container h2{
+    text-align: center;
+    font-size: 40px;
+    margin: 0 0 40px;
+    font-weight: bold;
 }
 .videos .stats .stats-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(250px, 1fr));
+    display: flex;
+    align-items: center;
     gap: 40px;
+}
+@media(max-width:767px){
+    .videos .stats .stats-content{
+        display: flex;
+        flex-direction: column;
+    }
 }
 .videos .stats .stats-box{
     text-align: center;
     line-height: 1.5;
     color: #313131;
     position: relative;
+    background-color: white;
+    padding: 30px 100px;
 }
 .videos .stats .stats-box:hover::before{
     transform: scale(1 , 1);
@@ -1644,6 +1698,11 @@ margin-top: 20px;
 }
 .discount .discount-content .txt h3{
     font-size: 35px;
+}
+@media(max-width:320px){
+    .discount .discount-content .txt h3{
+        font-size:  25px;
+    }
 }
 .discount .discount-content .txt form{
     display: flex;
